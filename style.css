@@ -29,6 +29,8 @@ body{
     font-weight: 600;
     text-decoration: none;
     cursor: pointer;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
 }
 .logo:hover{
     color: #ead621;
@@ -39,6 +41,10 @@ body{
     text-decoration: none;
     font-weight: 500;
     margin-left: 35px;
+    opacity: 0;
+    transition: .3s;
+    animation: slideTop .5s ease forwards;
+    animation-delay: calc(.2s* var(--i));
 }
 img {
    border-radius: 50%;
@@ -112,4 +118,25 @@ img {
 /* Add hover effect for buttons */
 .button button:hover {
     background-color: #d4b800; /* Darker yellow on hover */
+}
+
+@keyframes slideRight {
+    0%{
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+@keyframes slideTop {
+    0%{
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
 }
